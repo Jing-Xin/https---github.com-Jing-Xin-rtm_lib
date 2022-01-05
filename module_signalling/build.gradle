@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+//    id 'maven-publish'
+    id 'maven-publish'
 }
 
 android {
@@ -54,6 +56,18 @@ dependencies {
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation("com.google.code.gson:gson:2.8.9")
 
+}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.mize.signalling'
+                artifactId = 'rtmx'
+                version = '1.0-6'
+            }
+        }
+    }
 }
 
 
