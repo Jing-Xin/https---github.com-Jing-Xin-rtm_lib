@@ -50,8 +50,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation "org.java-websocket:Java-WebSocket:1.5.2"
-    implementation 'com.alibaba:fastjson:1.2.76'
-
+//    implementation 'com.alibaba:fastjson:1.2.76'
+// https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.8.9")
 
 }
 
