@@ -40,7 +40,7 @@ class RTMChannel(
 //                channelListener?.onReceiveMessage(peerId = msg.uid, msg = msg.data)
 //            }
             RTMMessageTypeJoinChannel -> {
-                channelListener?.onMemberLeaved(msg.uid)
+                channelListener?.onMemberJoined(msg.uid)
             }
             RTMMessageTypeLeaveChannel -> {
                 channelListener?.onMemberLeaved(msg.uid)
