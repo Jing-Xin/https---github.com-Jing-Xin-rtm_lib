@@ -1,6 +1,7 @@
 package com.mize.module_signalling
 
 import com.mize.module_signalling.core.MessageType.RTMMessageTypeChannelMembers
+import com.mize.module_signalling.core.MessageType.RTMMessageTypeJoinChannel
 import com.mize.module_signalling.core.MessageType.RTMMessageTypeLeaveChannel
 import com.mize.module_signalling.core.SocketManager
 
@@ -38,6 +39,9 @@ class RTMChannel(
 //            RTMMessageTypeChannel -> {
 //                channelListener?.onReceiveMessage(peerId = msg.uid, msg = msg.data)
 //            }
+            RTMMessageTypeJoinChannel -> {
+                channelListener?.onMemberLeaved(msg.uid)
+            }
             RTMMessageTypeLeaveChannel -> {
                 channelListener?.onMemberLeaved(msg.uid)
             }
